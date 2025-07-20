@@ -11,12 +11,14 @@ var s = []byte(`
 # comment line
 FOO=foo
 BAR = bar
+BAZ = "baz"
 `)
 
 func TestParse(t *testing.T) {
 	want := map[string]string{
 		"FOO": "foo",
 		"BAR": "bar",
+		"BAZ": "baz",
 	}
 	got := parser.Parse(s)
 
